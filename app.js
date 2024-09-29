@@ -6,7 +6,11 @@ const bodyParser = require("body-parser");
 
 app.use(express.json());
 const m = require("./router");
-const whitelist = ["http://127.0.0.1:3000", "http://localhost:3000"];
+const whitelist = [
+  "http://127.0.0.1:3000",
+  "http://localhost:3000",
+  "https://asprientfrontend.onrender.com",
+];
 const corsOptions = {
   origin: (origin, callback) => {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
